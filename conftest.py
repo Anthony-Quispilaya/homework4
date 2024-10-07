@@ -14,6 +14,7 @@ def generate_test_data(num_records):
         'multiply': multiply,
         'divide': divide
     }
+    
     # Generate test data
     for _ in range(num_records):
         a = Decimal(fake.random_number(digits=2))
@@ -31,8 +32,8 @@ def generate_test_data(num_records):
             else:
                 expected = operation_func(a, b)
         except ZeroDivisionError:
-            expected = "ZeroDivisionError"
-        
+            expected = "ZeroDivisionError" 
+            
         yield a, b, operation_name, operation_func, expected
 
 def pytest_addoption(parser):
